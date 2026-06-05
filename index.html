@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية - تذكار المرحومة الحاجة فوقية أحمد فؤاد الحصين</title>
+    <meta name="description" content="موقع تذكاري لروح المرحومة الحاجة فوقية أحمد فؤاد الحصين، ادعُ لها بالرحمة واقرأ القرآن الكريم وأهدِ الثواب لروحه الطاهرة. صدقة جارية في ميزان حسناته.">
+    
+    <!-- Google Fonts for Elegant Arabic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #E8C97A;
+            --gold-dark: #9A7B2C;
+            --beige: #F5EDD8;
+            --beige-dark: #EDE0C4;
+            --cream: #FDFAF3;
+            --green-dark: #1B3A2D;
+            --green-mid: #2C5440;
+            --green-light: #3D7055;
+            --text-dark: #1A1A1A;
+            --text-muted: #5C5C5C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            direction: rtl;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Scheherazade New', 'Amiri', serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background Patterns */
+        .pattern-bg {
+            background-color: var(--green-dark);
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(201,168,76,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(201,168,76,0.08) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='rgba(201,168,76,0.15)' stroke-width='0.5'%3E%3Cpolygon points='40,5 75,27.5 75,52.5 40,75 5,52.5 5,27.5'/%3E%3Cpolygon points='40,15 65,30 65,50 40,65 15,50 15,30'/%3E%3Cline x1='40' y1='5' x2='40' y2='15'/%3E%3Cline x1='75' y1='27.5' x2='65' y2='30'/%3E%3Cline x1='75' y1='52.5' x2='65' y2='50'/%3E%3Cline x1='40' y1='75' x2='40' y2='65'/%3E%3Cline x1='5' y1='52.5' x2='15' y2='50'/%3E%3Cline x1='5' y1='27.5' x2='15' y2='30'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .pattern-light {
+            background-color: var(--beige);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg fill='none' stroke='rgba(201,168,76,0.2)' stroke-width='0.5'%3E%3Cpolygon points='30,3 57,18 57,42 30,57 3,42 3,18'/%3E%3Cpolygon points='30,12 48,22 48,38 30,48 12,38 12,22'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Global Structural Styles */
+        .max-w-4xl { max-width: 56rem; margin: 0 auto; }
+        .max-w-6xl { max-width: 72rem; margin: 0 auto; }
+        .text-center { text-align: center; }
+        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .mb-14 { margin-bottom: 3.5rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .section-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1.5rem auto;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0; right: 0; left: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+            background: transparent;
+        }
+        nav.scrolled {
+            background: rgba(27, 58, 45, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        .nav-brand {
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-link {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: var(--gold-light); }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 1rem 5rem 1rem;
+            text-align: center;
+            color: white;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .bismillah {
+            font-size: 2.5rem;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: #fff; }
+        .hero p { font-size: 1.5rem; color: rgba(255,255,255,0.8); max-width: 600px; }
+
+        /* Cards and Layouts */
+        .grid-1 { display: grid; gap: 1.5rem; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        
+        .arabic-card {
+            background: white;
+            border: 1px solid rgba(201,168,76,0.3);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(27,58,45,0.08);
+            transition: all 0.3s ease;
+            padding: 2rem;
+            position: relative;
+        }
+        .arabic-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 8px 30px rgba(27,58,45,0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Buttons */
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(201,168,76,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Scheherazade New', serif;
+        }
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            transform: translateY(-1px);
+        }
+        .btn-action-outline {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(27,58,45,0.2);
+            background: rgba(27,58,45,0.04);
+            color: var(--green-dark);
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Scheherazade New', serif;
+        }
+        .btn-action-outline.active {
+            background: rgba(44,84,64,0.12);
+            color: var(--green-mid);
+            border-color: var(--green-mid);
+        }
+
+        /* Custom Section Layouts */
+        .quran-verse { font-size: 2rem; line-height: 2.2; color: var(--green-dark); margin-bottom: 1.5rem; text-align: center;}
+        .card-header-meta { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(201,168,76,0.15); padding-bottom: 1rem; margin-bottom: 1rem; }
+        .surah-badge { background: var(--green-dark); color: var(--gold-light); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        
+        /* Interactive Component Elements */
+        .counter-display { font-size: 3.5rem; font-weight: bold; color: var(--gold); margin: 1rem 0; }
+        .card-dark { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.25); color: white; }
+        .card-dark h3 { color: var(--gold-light); font-size: 1.5rem; }
+        .total-counter-box { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); padding: 1.5rem; border-radius: 16px; display: inline-block; margin-bottom: 2rem; }
+
+        /* Prayer Wall Styles */
+        .wall-input-container { background: white; padding: 2rem; border-radius: 12px; border: 1px solid rgba(201,168,76,0.3); margin-bottom: 2rem; }
+        .wall-textarea { width: 100%; height: 100px; padding: 1rem; border-radius: 8px; border: 1px solid #ccc; resize: none; font-family: inherit; font-size: 1.2rem; margin-bottom: 1rem; }
+        .suggestions-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
+        .suggestion-tag { background: var(--beige); padding: 6px 12px; border-radius: 20px; font-size: 0.95rem; cursor: pointer; border: 1px solid transparent; }
+        .suggestion-tag:hover { border-color: var(--gold); }
+        .prayer-message-card { background: white; border-right: 4px solid var(--gold); padding: 1rem; border-radius: 4px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .prayer-message-card p { font-size: 1.3rem; color: var(--green-dark); }
+        .prayer-message-card span { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* Modal Overlay Graphic */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(6px);
+            z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem;
+        }
+        .modal-card {
+            background: linear-gradient(160deg, #1B3A2D 0%, #0d2318 50%, #1a2e1e 100%);
+            border: 2px solid rgba(201,168,76,0.6); max-width: 450px; width: 100%;
+            border-radius: 16px; padding: 2rem; text-align: center; color: white; position: relative;
+        }
+        .close-modal-btn { position: absolute; top: -12px; left: -12px; background: var(--gold); border: none; width: 32px; height: 32px; border-radius: 50%; color: white; cursor: pointer; font-weight: bold; }
+        
+        /* Styled Image Frame */
+        .avatar-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 1.5rem auto;
+            border: 3px solid var(--gold);
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        footer { text-align: center; color: white; padding: 4rem 1rem; position: relative; }
+        footer p { margin-bottom: 1rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.3rem; }
+            .bismillah { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container max-w-6xl">
+            <a href="#" class="nav-brand">صدقة جارية</a>
+            <div class="nav-links">
+                <a href="#prayers" class="nav-link">الأدعية</a>
+                <a href="#counters" class="nav-link">العدادات الأذكار</a>
+                <a href="#quran" class="nav-link">القرآن الكريم</a>
+                <a href="#good-deeds" class="nav-link">أعمال صالحة</a>
+                <a href="#prayer-wall" class="nav-link">جدار الدعاء</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero pattern-bg">
+        <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+        <h1>صدقة جارية</h1>
+        <p style="margin-top: 1rem; font-size: 1.6rem; color: var(--gold-light);">لروح الفُقيدة العزيزة المرحومة الحاجة / فوقية أحمد فؤاد الحصين</p>
+        <div class="section-divider"></div>
+        <p>نسأل الله عز وجل أن يغفر لها ويرحمها ويسكنها فسيح جناته ويلهم أهلها وذويها الصبر والسلوان.</p>
+        <button class="btn-gold" style="margin-top: 2rem;" onclick="openModal()">✦ عرض بطاقة التذكار ومشاركتها</button>
+    </header>
+
+    <!-- Prayers Section -->
+    <section id="prayers" class="py-20 px-4">
+        <div class="max-w-4xl text-center">
+            <div style="font-size: 2.5rem;">🤲</div>
+            <h2 style="font-size: 2.5rem; color: var(--green-dark);">أدعية مأثورة للمتوفى</h2>
+            <div class="section-divider"></div>
+            <p style="color: var(--text-muted); margin-bottom: 3rem;">اقرأ الدعاء وانوِ أجر الثواب لروح المرحومة</p>
+            
+            <div class="grid-1">
+                <div class="arabic-card">
+                    <p class="quran-text" style="font-size: 1.8rem; color: var(--green-dark); font-weight: bold;">"اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا، وَعَافِهَا وَاعْفُ عَنْهَا، وَأَكْرِمْ نُزُلَهَا، وَوَسِّعْ مُدْخَلَهَا"</p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-muted);">المصدر: صحيح مسلم</p>
+                </div>
+                <div class="arabic-card">
+                    <p class="quran-text" style="font-size: 1.8rem; color: var(--green-dark); font-weight: bold;">"اللَّهُمَّ اجْعَلْ قَبْرَهَا رَوْضَةً مِنْ رِيَاضِ الجَنَّةِ، وَلَا تَجْعَلْهُ حُفْرَةً مِنْ حُفَرِ النِّيرَانِ"</p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-muted);">المصدر: دعاء مأثور</p>
+                </div>
+                <div class="arabic-card">
+                    <p class="quran-text" style="font-size: 1.8rem; color: var(--green-dark); font-weight: bold;">"اللَّهُمَّ أَنِرْ قَبْرَهَا، وَاجْمَعْنَا بِهَا فِي الفِرْدَوْسِ الأَعْلَى مَعَ النَّبِيِّينَ وَالصِّدِّيقِينَ"</p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-muted);">المصدر: دعاء مأثور</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Counters Section -->
+    <section id="counters" class="py-20 px-4 pattern-light" style="background-color: var(--beige-dark);">
+        <div class="max-w-4xl text-center">
+            <div style="font-size: 2.5rem;">📿</div>
+            <h2 style="font-size: 2.5rem; color: var(--green-dark);">مسبحة الأذكار الإلكترونية</h2>
+            <div class="section-divider"></div>
+            
+            <div class="grid-2">
+                <!-- Counter 1: Istighfar -->
+                <div class="arabic-card">
+                    <h3>أستغفر الله العظيم</h3>
+                    <div class="counter-display" id="count-istighfar">٠</div>
+                    <button class="btn-gold" onclick="incrementCounter('istighfar')">استغفار (+1)</button>
+                </div>
+                <!-- Counter 2: Tasbeeh -->
+                <div class="arabic-card">
+                    <h3>سبحان الله وبحمده</h3>
+                    <div class="counter-display" id="count-tasbeeh">٠</div>
+                    <button class="btn-gold" onclick="incrementCounter('tasbeeh')">تسبيح (+1)</button>
+                </div>
+                <!-- Counter 3: Salawat -->
+                <div class="arabic-card">
+                    <h3>اللهم صلِّ وسلم على نبينا محمد</h3>
+                    <div class="counter-display" id="count-salawat">٠</div>
+                    <button class="btn-gold" onclick="incrementCounter('salawat')">صلاة على النبي (+1)</button>
+                </div>
+            </div>
+            <button class="btn-gold" style="margin-top: 2.5rem; background: var(--green-dark);" onclick="resetAllCounters()">إعادة تعيين العدادات لقيم صفرية</button>
+        </div>
+    </section>
+
+    <!-- Quran Section -->
+    <section id="quran" class="py-20 px-4">
+        <div class="max-w-4xl">
+            <div class="text-center mb-14">
+                <div style="font-size: 2.5rem;">📖</div>
+                <h2 style="font-size: 2.5rem; color: var(--green-dark);">اقرأ القرآن الكريم وأهدِ الثواب</h2>
+                <div class="section-divider"></div>
+                <p style="color: var(--text-muted);">سُوَر مباركة مخصصة للقراءة من قِبل الزوار</p>
+            </div>
+
+            <div class="grid-1">
+                <!-- Surah 1 -->
+                <div class="arabic-card" id="surah-fatiha">
+                    <div class="card-header-meta">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="surah-badge">١</div>
+                            <h3 style="color: var(--green-dark);">سورة الفاتحة</h3>
+                        </div>
+                        <span style="font-size: 0.95rem; color: var(--text-muted);">٧ آيات — أعظم سورة في القرآن</span>
+                    </div>
+                    <p class="quran-verse">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ ۝ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۝ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</p>
+                    <button class="btn-action-outline" id="btn-fatiha" onclick="toggleSurahStatus('fatiha')">قرأتها وأهديت الثواب</button>
+                </div>
+
+                <!-- Surah 2 -->
+                <div class="arabic-card" id="surah-ikhlas">
+                    <div class="card-header-meta">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div class="surah-badge">١١٢</div>
+                            <h3 style="color: var(--green-dark);">سورة الإخلاص</h3>
+                        </div>
+                        <span style="font-size: 0.95rem; color: var(--text-muted);">٤ آيات — تعدل ثلث القرآن الكريم</span>
+                    </div>
+                    <p class="quran-verse">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ۝ قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ</p>
+                    <button class="btn-action-outline" id="btn-ikhlas" onclick="toggleSurahStatus('ikhlas')">قرأتها وأهديت الثواب</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Good Deeds Tracker Section -->
+    <section id="good-deeds" class="py-20 px-4 pattern-bg">
+        <div class="max-w-4xl text-center">
+            <div style="font-size: 2.5rem;">✨</div>
+            <h2 style="color: var(--gold-light); font-size: 2.5rem;">سجل أعمالك الصالحة لروح المتوفاة</h2>
+            <div class="section-divider"></div>
+            
+            <div class="total-counter-box">
+                <p style="color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 0.5rem;">إجمالي الأعمال الصالحة والختمات المهداة من الزوار</p>
+                <div style="font-size: 3rem; color: var(--gold); font-weight: bold;" id="total-good-deeds">٠</div>
+            </div>
+
+            <div class="grid-2">
+                <div class="arabic-card card-dark">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📖</div>
+                    <h3>ختم قراءة الفاتحة</h3>
+                    <p style="margin: 0.5rem 0 1.5rem 0; color: rgba(255,255,255,0.6);" id="deed-val-fatiha">أهديت ٠ مرة</p>
+                    <button class="btn-gold" onclick="recordGoodDeed('fatiha')">فعلتها ونذرت أجرها ✓</button>
+                </div>
+                <div class="arabic-card card-dark">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📿</div>
+                    <h3>استغفار ١٠٠ مرة</h3>
+                    <p style="margin: 0.5rem 0 1.5rem 0; color: rgba(255,255,255,0.6);" id="deed-val-istighfar">أهديت ٠ مرة</p>
+                    <button class="btn-gold" onclick="recordGoodDeed('istighfar')">فعلتها ونذرت أجرها ✓</button>
+                </div>
+                <div class="arabic-card card-dark">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">💸</div>
+                    <h3>صدقة مالية بنية المتوفى</h3>
+                    <p style="margin: 0.5rem 0 1.5rem 0; color: rgba(255,255,255,0.6);" id="deed-val-charity">أهديت ٠ مرة</p>
+                    <button class="btn-gold" onclick="recordGoodDeed('charity')">فعلتها ونذرت أجرها ✓</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Wall Section -->
+    <section id="prayer-wall" class="py-20 px-4">
+        <div class="max-w-4xl">
+            <div class="text-center mb-14">
+                <div style="font-size: 2.5rem;">✍️</div>
+                <h2 style="font-size: 2.5rem; color: var(--green-dark);">جدار الدعاء التفاعلي للزائرين</h2>
+                <div class="section-divider"></div>
+                <p style="color: var(--text-muted);">اكتب دعاءً أو رسالة تعزية لتظهر في لوحة التعازي</p>
+            </div>
+
+            <div class="wall-input-container">
+                <textarea class="wall-textarea" id="wall-input-field" placeholder="اكتب دعاءك للمرحومة هنا..."></textarea>
+                
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.5rem;">أدعية مقترحة سريعة:</p>
+                <div class="suggestions-group">
+                    <span class="suggestion-tag" onclick="useSuggestion('اللهم اغفر لها وارحمها وأسكنها الفردوس الأعلى.')">اللهم اغفر لها وارحمها</span>
+                    <span class="suggestion-tag" onclick="useSuggestion('اللهم اجعل قبرها روضة من رياض الجنة ولا تجعله حفرة من حفر النار.')">اللهم اجعل قبرها روضة من رياض الجنة</span>
+                    <span class="suggestion-tag" onclick="useSuggestion('إنا لله وإنا إليه راجعون، ربنا يرحمها ويصبر أهلها.')">إنا لله وإنا إليه راجعون</span>
+                </div>
+
+                <button class="btn-gold" style="width: 100%; justify-content: center; padding: 12px;" onclick="submitPrayerToWall()">إرسال الدعاء للموقع</button>
+            </div>
+
+            <div id="prayers-list-container">
+                <!-- Dynamically loaded messages will append here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Graphic Information -->
+    <footer class="pattern-bg">
+        <div class="max-w-4xl">
+            <p style="font-size: 1.8rem; color: var(--gold-light);">نَسْأَلُ اللَّهَ أَنْ يَجْعَلَ هَذَا العَمَلَ صَدَقَةً جَارِيَةً فِي مِيزَانِ حَسَنَاتِهَا</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 1.2rem;">اللَّهُمَّ اغْفِرْ لِلْحَاجَّةِ فَوْقِيَّةَ أَحْمَد فُؤَاد الحُصَيْن وَارْحَمْهَا وَأَسْكِنْهَا فَسِيحَ جَنَّاتِكَ</p>
+            <div class="section-divider"></div>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.4);">تم إعداد وتطوير هذا الموقع بكل إخلاص من قِبل أهلها وذويها.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Pop-up / Memorial Card -->
+    <div class="modal-overlay" id="memorial-modal" style="display: none;">
+        <div class="modal-card">
+            <button class="close-modal-btn" onclick="closeModal()">X</button>
+            <p style="color: var(--gold); font-size: 1.1rem;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+            
+            <!-- Target image node looking for photo.jpg in the repository -->
+            <img src="photo.jpg" alt="المرحومة الحاجة فوقية أحمد فؤاد الحصين" class="avatar-photo">
+            
+            <h2 style="color: var(--gold-light); font-size: 2.2rem; margin-bottom: 0.5rem;">الحاجة / فوقية أحمد فؤاد الحصين</h2>
+            <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 1rem;">١٩٦٣م — ٢٠٢٦م</p>
+            
+            <p style="font-size: 1.4rem; line-height: 1.8; color: var(--gold); background: rgba(201,168,76,0.08); padding: 1rem; border-radius: 8px; border: 1px solid rgba(201,168,76,0.2); margin-bottom: 1.5rem;">
+                ﴿ كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ ۝ وَإِنَّا إِلَيْهِ رَاجِعُونَ ﴾
+            </p>
+            
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; line-height: 1.8;">اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا وَأَدْخِلْهَا جَنَّةَ الفِرْدَوْسِ الأَعْلَى بغير حساب ولا سابقة عذاب.</p>
+        </div>
+    </div>
+
+    <!-- Application Script Engine Logic -->
+    <script>
+        // Navbar scroll color transition effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 60) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Popup dynamic view handling
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                openModal();
+            }, 800);
+            initializeDataDisplays();
+        });
+
+        function openModal() { document.getElementById('memorial-modal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('memorial-modal').style.display = 'none'; }
+
+        // Localized system core trackers
+        function initializeDataDisplays() {
+            // Setup Counters
+            document.getElementById('count-istighfar').innerText = (localStorage.getItem('cnt_istighfar') || 0).toLocaleString('ar-EG');
+            document.getElementById('count-tasbeeh').innerText = (localStorage.getItem('cnt_tasbeeh') || 0).toLocaleString('ar-EG');
+            document.getElementById('count-salawat').innerText = (localStorage.getItem('cnt_salawat') || 0).toLocaleString('ar-EG');
+
+            // Setup Quran Surah checks
+            if(localStorage.getItem('surah_fatiha') === 'true') {
+                setSurahCardActive('fatiha');
+            }
+            if(localStorage.getItem('surah_ikhlas') === 'true') {
+                setSurahCardActive('ikhlas');
+            }
+
+            // Setup Good deeds trackers
+            updateDeedDisplayElements();
+            renderPrayerWallItems();
+        }
+
+        // Digital counter update calculations
+        function incrementCounter(type) {
+            let current = parseInt(localStorage.getItem('cnt_' + type) || 0);
+            current += 1;
+            localStorage.setItem('cnt_' + type, current);
+            document.getElementById('count-' + type).innerText = current.toLocaleString('ar-EG');
+        }
+
+        function resetAllCounters() {
+            localStorage.setItem('cnt_istighfar', 0);
+            localStorage.setItem('cnt_tasbeeh', 0);
+            localStorage.setItem('cnt_salawat', 0);
+            initializeDataDisplays();
+        }
+
+        // Quran view handling modifications
+        function toggleSurahStatus(surahKey) {
+            let status = localStorage.getItem('surah_' + surahKey) === 'true';
+            status = !status;
+            localStorage.setItem('surah_' + surahKey, status);
+            
+            const btn = document.getElementById('btn-' + surahKey);
+            const card = document.getElementById('surah-' + surahKey);
+            
+            if (status) {
+                setSurahCardActive(surahKey);
+            } else {
+                card.style.background = "white";
+                card.style.borderColor = "rgba(201,168,76,0.3)";
+                btn.classList.remove('active');
+                btn.innerText = "قرأتها وأهديت الثواب";
+            }
+        }
+
+        function setSurahCardActive(key) {
+            const btn = document.getElementById('btn-' + key);
+            const card = document.getElementById('surah-' + key);
+            card.style.background = "rgba(44,84,64,0.03)";
+            card.style.borderColor = "var(--green-mid)";
+            btn.classList.add('active');
+            btn.innerText = "✓ قرأتها وأهديت الثواب";
+        }
+
+        // Good deeds state metrics management
+        function recordGoodDeed(deedKey) {
+            let total = parseInt(localStorage.getItem('deed_' + deedKey) || 0);
+            total += 1;
+            localStorage.setItem('deed_' + deedKey, total);
+            updateDeedDisplayElements();
+        }
+
+        function updateDeedDisplayElements() {
+            let fatiha = parseInt(localStorage.getItem('deed_fatiha') || 0);
+            let istighfar = parseInt(localStorage.getItem('deed_istighfar') || 0);
+            let charity = parseInt(localStorage.getItem('deed_charity') || 0);
+
+            document.getElementById('deed-val-fatiha').innerText = "أهديت " + fatiha.toLocaleString('ar-EG') + " مرة";
+            document.getElementById('deed-val-istighfar').innerText = "أهديت " + istighfar.toLocaleString('ar-EG') + " مرة";
+            document.getElementById('deed-val-charity').innerText = "أهديت " + charity.toLocaleString('ar-EG') + " مرة";
+
+            let cumulative = fatiha + istighfar + charity;
+            document.getElementById('total-good-deeds').innerText = cumulative.toLocaleString('ar-EG');
+        }
+
+        // Interactive Prayer Wall actions
+        function useSuggestion(text) {
+            document.getElementById('wall-input-field').value = text;
+        }
+
+        function submitPrayerToWall() {
+            const textarea = document.getElementById('wall-input-field');
+            const content = textarea.value.trim();
+            if(!content) return;
+
+            let list = JSON.parse(localStorage.getItem('saved_wall_prayers') || '[]');
+            const dateStr = new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            list.unshift({ text: content, date: dateStr });
+            localStorage.setItem('saved_wall_prayers', JSON.stringify(list));
+            
+            textarea.value = '';
+            renderPrayerWallItems();
+        }
+
+        function renderPrayerWallItems() {
+            let list = JSON.parse(localStorage.getItem('saved_wall_prayers') || '[]');
+            const container = document.getElementById('prayers-list-container');
+            container.innerHTML = '';
+
+            // Default fallback messages if empty array
+            if(list.length === 0) {
+                list = [
+                    { text: "اللهم اغفر لها وارحمها وعافها واعف عنها وأكرم نزلها.", date: "١ رمضان" },
+                    { text: "الله يرحمك يا أمي الغالية ويجعل مثواكِ الجنة.", date: "قبل يومين" }
+                ];
+            }
+
+            list.forEach(item => {
+                const itemCard = document.createElement('div');
+                itemCard.className = 'prayer-message-card';
+                itemCard.innerHTML = `
+                    <p>${item.text}</p>
+                    <span>${item.date}</span>
+                `;
+                container.appendChild(itemCard);
+            });
+        }
+    </script>
+</body>
+</html>
