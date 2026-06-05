@@ -128,13 +128,14 @@
         
         /* Heading Framed Portrait */
         .header-portrait {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--gold);
-            margin: 1.5rem auto;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            max-width: 480px;
+            width: 90%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: contain;
+            border: 3px solid var(--gold);
+            margin: 2rem auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             display: block;
         }
 
@@ -217,6 +218,7 @@
         .prayer-message-card { background: white; border-right: 4px solid var(--gold); padding: 1rem; border-radius: 4px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .prayer-message-card p { font-size: 1.3rem; color: var(--green-dark); }
         .prayer-message-card span { font-size: 0.9rem; color: var(--text-muted); }
+        .no-prayers-msg { color: rgba(255, 255, 255, 0.5); font-style: italic; font-size: 1.2rem; }
 
         /* Modal / Welcome Pop-up Overlay */
         .modal-overlay {
@@ -225,31 +227,33 @@
         }
         .modal-card {
             background: linear-gradient(160deg, #1B3A2D 0%, #0d2318 50%, #1a2e1e 100%);
-            border: 2px solid rgba(201,168,76,0.6); max-width: 450px; width: 100%;
+            border: 2px solid rgba(201,168,76,0.6); max-width: 500px; width: 100%;
             border-radius: 16px; padding: 2rem; text-align: center; color: white; position: relative;
+            max-height: 95vh; overflow-y: auto;
         }
-        .close-modal-btn { position: absolute; top: -12px; left: -12px; background: var(--gold); border: none; width: 32px; height: 32px; border-radius: 50%; color: white; cursor: pointer; font-weight: bold; }
+        .close-modal-btn { position: absolute; top: 12px; left: 12px; background: var(--gold); border: none; width: 32px; height: 32px; border-radius: 50%; color: white; cursor: pointer; font-weight: bold; z-index: 10; }
         
         /* Welcome Card Framed Photo */
         .welcome-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
             margin: 1.5rem auto;
             border: 3px solid var(--gold);
-            object-fit: cover;
+            object-fit: contain;
             display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         footer { text-align: center; color: white; padding: 4rem 1rem; position: relative; }
         footer p { margin-bottom: 1rem; }
+        .credit-text { font-size: 1.1rem; color: var(--gold-light); margin-top: 1.5rem; font-family: 'Amiri', serif; letter-spacing: 0.5px; opacity: 0.9; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero h1 { font-size: 2.3rem; }
             .bismillah { font-size: 1.8rem; }
-            .header-portrait { width: 140px; height: 140px; }
+            .header-portrait { max-width: 320px; }
         }
     </style>
 </head>
@@ -274,7 +278,7 @@
         <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
         <h1>في ذمة الله وفي قلوبنا دائماً</h1>
         
-        <!-- Heading Portrait Section Image (header.png) -->
+        <!-- Heading Portrait Section Image -->
         <img src="header.png" alt="المرحومة الحاجة فوقية أحمد فؤاد الحصين" class="header-portrait">
         
         <p style="margin-top: 0.5rem; font-size: 1.8rem; color: var(--gold-light); font-weight: bold;">المرحومة الحاجة / فوقية أحمد فؤاد الحصين</p>
@@ -450,6 +454,9 @@
             <p style="color: rgba(255,255,255,0.7); font-size: 1.2rem;">اللَّهُمَّ اغْفِرْ لِلْحَاجَّةِ فَوْقِيَّةَ أَحْمَد فُؤَاد الحُصَيْن وَارْحَمْهَا وَأَسْكِنْهَا فَسِيحَ جَنَّاتِكَ</p>
             <div class="section-divider"></div>
             <p style="font-size: 0.9rem; color: rgba(255,255,255,0.4);">تم إعداد وتطوير هذا الموقع بكل إخلاص من قِبل أهلها وذويها.</p>
+            
+            <!-- Credit Label section requested -->
+            <div class="credit-text">Made by Kareem Ghonim</div>
         </div>
     </footer>
 
@@ -459,8 +466,8 @@
             <button class="close-modal-btn" onclick="closeModal()">X</button>
             <p style="color: var(--gold); font-size: 1.1rem;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
             
-            <!-- Welcome Pop-up Framed Image (welcome.png) -->
-            <img src="welcome.png" alt="المرحومة الحاجة فوقية أحمد فؤاد الحصين" class="welcome-photo">
+            <!-- Welcome Pop-up Image -->
+            <img src="welcome.jpg" alt="المرحومة الحاجة فوقية أحمد فؤاد الحصين" class="welcome-photo">
             
             <h2 style="color: var(--gold-light); font-size: 2.2rem; margin-bottom: 0.5rem;">الحاجة / فوقية أحمد فؤاد الحصين</h2>
             <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 1rem;">١٩٦٣م — ٢٠٢٦م</p>
@@ -605,12 +612,10 @@
             const container = document.getElementById('prayers-list-container');
             container.innerHTML = '';
 
-            // Default fallback messages if empty array
+            // Clean Slate: No pre-filled mock logs remain if the list is empty
             if(list.length === 0) {
-                list = [
-                    { text: "اللهم اغفر لها وارحمها وعافها واعف عنها وأكرم نزلها.", date: "١ رمضان" },
-                    { text: "الله يرحمك يا أمي الغالية ويجعل مثواكِ الجنة.", date: "قبل يومين" }
-                ];
+                container.innerHTML = '<p class="text-center no-prayers-msg">شاركونا بالدعاء للمرحومة لتظهر رسائلكم هنا...</p>';
+                return;
             }
 
             list.forEach(item => {
