@@ -108,12 +108,12 @@
         }
         .nav-link:hover { color: var(--gold-light); }
 
-        /* Hero Section */
+        /* Hero / Heading Section */
         .hero {
-            padding: 8rem 1rem 5rem 1rem;
+            padding: 9rem 1rem 5rem 1rem;
             text-align: center;
             color: white;
-            min-height: 80vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -122,10 +122,21 @@
         .bismillah {
             font-size: 2.5rem;
             color: var(--gold-light);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: #fff; }
-        .hero p { font-size: 1.5rem; color: rgba(255,255,255,0.8); max-width: 600px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; color: #fff; }
+        
+        /* Heading Framed Portrait */
+        .header-portrait {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            margin: 1.5rem auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            display: block;
+        }
 
         /* Cards and Layouts */
         .grid-1 { display: grid; gap: 1.5rem; }
@@ -207,7 +218,7 @@
         .prayer-message-card p { font-size: 1.3rem; color: var(--green-dark); }
         .prayer-message-card span { font-size: 0.9rem; color: var(--text-muted); }
 
-        /* Modal Overlay Graphic */
+        /* Modal / Welcome Pop-up Overlay */
         .modal-overlay {
             position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(6px);
             z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 1rem;
@@ -219,8 +230,8 @@
         }
         .close-modal-btn { position: absolute; top: -12px; left: -12px; background: var(--gold); border: none; width: 32px; height: 32px; border-radius: 50%; color: white; cursor: pointer; font-weight: bold; }
         
-        /* Styled Image Frame */
-        .avatar-photo {
+        /* Welcome Card Framed Photo */
+        .welcome-photo {
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -238,6 +249,7 @@
             .nav-links { display: none; }
             .hero h1 { font-size: 2.3rem; }
             .bismillah { font-size: 1.8rem; }
+            .header-portrait { width: 140px; height: 140px; }
         }
     </style>
 </head>
@@ -257,13 +269,17 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero / Heading Section -->
     <header class="hero pattern-bg">
         <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-        <h1>صدقة جارية</h1>
-        <p style="margin-top: 1rem; font-size: 1.6rem; color: var(--gold-light);">لروح الفُقيدة العزيزة المرحومة الحاجة / فوقية أحمد فؤاد الحصين</p>
+        <h1>في ذمة الله وفي قلوبنا دائماً</h1>
+        
+        <!-- Heading Portrait Section Image (header.png) -->
+        <img src="header.png" alt="المرحومة الحاجة فوقية أحمد فؤاد الحصين" class="header-portrait">
+        
+        <p style="margin-top: 0.5rem; font-size: 1.8rem; color: var(--gold-light); font-weight: bold;">المرحومة الحاجة / فوقية أحمد فؤاد الحصين</p>
         <div class="section-divider"></div>
-        <p>نسأل الله عز وجل أن يغفر لها ويرحمها ويسكنها فسيح جناته ويلهم أهلها وذويها الصبر والسلوان.</p>
+        <p style="max-w-4xl; font-size: 1.4rem;">نسأل الله عز وجل أن يغفر لها ويرحمها ويسكنها فسيح جناته ويلهم أهلها وذويها الصبر والسلوان.</p>
         <button class="btn-gold" style="margin-top: 2rem;" onclick="openModal()">✦ عرض بطاقة التذكار ومشاركتها</button>
     </header>
 
@@ -437,14 +453,14 @@
         </div>
     </footer>
 
-    <!-- Interactive Pop-up / Memorial Card -->
+    <!-- Interactive Pop-up / Welcome Page Card -->
     <div class="modal-overlay" id="memorial-modal" style="display: none;">
         <div class="modal-card">
             <button class="close-modal-btn" onclick="closeModal()">X</button>
             <p style="color: var(--gold); font-size: 1.1rem;">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
             
-            <!-- Target image node looking for photo.jpg in the repository -->
-            <img src="photo.jpg" alt="المرحومة الحاجة فوقية أحمد فؤاد الحصين" class="avatar-photo">
+            <!-- Welcome Pop-up Framed Image (welcome.png) -->
+            <img src="welcome.png" alt="المرحومة الحاجة فوقية أحمد فؤاد الحصين" class="welcome-photo">
             
             <h2 style="color: var(--gold-light); font-size: 2.2rem; margin-bottom: 0.5rem;">الحاجة / فوقية أحمد فؤاد الحصين</h2>
             <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 1rem;">١٩٦٣م — ٢٠٢٦م</p>
